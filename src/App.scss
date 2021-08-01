@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$roboto: 'Roboto';
+$cursive_font: 'Satisfy';
+$round: 'Varela Round';
+$cta: #fe8033;
+$bg: #272b34;
+$light_bg: #2b3039;
+$text: #2d343e;
+$white: #fff;
+
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  font-family: $round;
+  background-color: $bg;
+}
+
+.dFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 30px 50px 20px 50px;
+  box-sizing: border-box;
+  background-color: $bg;
+  overflow: auto;
+}
+
+nav {
+  @extend .dFlex;
+  justify-content: space-between;
+  width: 100%;
+  color: $white;
+  background-color: $bg;
+  position: sticky;
+  top: -30px;
+  z-index: 1;
+  padding: 10px 0 10px 0;
+  .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: rgba($white, 0.7);
+  }
+  ul {
+    @extend .dFlex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-weight: 600;
+    li {
+      font-size: 14px;
+      margin-left: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+      color: rgba($white, 0.7);
+      cursor: pointer;
+      transition: all .5s ease-in-out;
+      &:hover {
+        background-color: rgba(#3d444e, .3);
+        border-radius: 35px;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .search {
+    color: rgba($white, 0.7);
+    .fa {
+      cursor: pointer;
+      +.fa {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.main_content {
+  @extend .dFlex;
+  position: relative;
+  width: 70%;
+  // height: 100%;
+  margin: 50px auto;
+  // padding: 50px 0 0;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  h3 {
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    padding-bottom: 20px;
+    color: $text;
+    font-size: 7.5vw;
+    flex: 0 1 100%;
+  }
+  .card {
+    @extend .dFlex;
+    width: 240px;
+    border-radius: 15px;
+    flex-direction: column;
+    position: relative;
+    transform: scale(.8);
+    transition: all .3s ease-in-out;
+    margin-bottom: 50px;
+    .card_img {
+      margin-top: -5vw;
+      img {
+        width: 200px;
+      }
+    }
+    .card_header {
+      @extend .dFlex;
+      flex-direction: column;
+      color: $white;
+      margin: 25px 0;
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+        text-align: center;
+        color: rgba($white, 0.3);
+        margin: 8px 0;
+      }
+      .price {
+        font-size: 25px;
+        color: $cta;
+        span {
+          font-size: 15px;
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+    &:hover {
+      background-color: $light_bg;
+      transform: scale(1.1);
+      cursor: pointer;
+      .btn {
+        background-color: $cta;
+        color: $white;
+      }
+    }
+  }
+}
+
+.btn {
+  @extend .dFlex;
+  width: 130px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 35px;
+  background-color: $text;
+  color: rgba($white, 0.5);
+  cursor: pointer;
+  position: relative;
+  transition: background-color .3s ease;
+  overflow: hidden;
+}
+
+.footer {
+  @extend .dFlex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
+  color: rgba($white, 0.3);
+  font-size: 12px;
+  padding-top: 35px;
+  .social {
+    @extend .dFlex;
+    .fa {
+      @extend .dFlex;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      border: 1px solid rgba($white, .3);
+      font-size: 24px;
+      color: rgba($white, 0.3);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+        background-color: $light_bg;
+      }
+      +.fa {
+        margin-left: 15px;
+      }
+    }
+  }
+}
