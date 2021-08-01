@@ -41,7 +41,7 @@ export const productCard = [{
     description: 'some description',
     price: 321,
     currency: '$',
-    thumb: './images/2.png'
+    thumb: './assets/images/2.png'
 },{
     productName: 'Pepe',
     description: 'some description',
